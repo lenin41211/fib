@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>cpobj</title>
+<body>
+  <script async type="text/javascript" src="c.js"></script>
+ 
+<script src="fib.js"></script>
+<script>
+  Module.onRuntimeInitialized = _ => {
+    const fib = Module.cwrap('fib', 'number', ['number']);
+   // const fib = Module.ccall('fib', 'number', ['number'],[123]);
+
+    console.log(fib(12));
+    alert(fib(12));
+
+  };
+</script>
+
+
+</body>
+</html>
